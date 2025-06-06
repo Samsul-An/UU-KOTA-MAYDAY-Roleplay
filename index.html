@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>UU Kota Mayday Roleplay</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h2 { margin-top: 40px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        .total { font-weight: bold; margin-top: 20px; }
+        .btn { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>UU Kota Mayday Roleplay - Log Penangkapan</h1>
+    <label>Nama Tersangka: <input type="text" id="tersangka"></label><br><br>
+    <div class="total">
+        Total Pasal: <span id="totalPasal">0</span><br>
+        Total Denda: $<span id="totalDenda">0</span><br>
+        Total Tahanan: <span id="totalBulan">0</span> bulan
+    </div>
+
+    <button type="button" onclick="resetForm()" class="btn">Reset</button>
+    <button type="button" onclick="logPenangkapan()" class="btn">Log Penangkapan</button>
+    </form>
+
+    <h2>Riwayat Penangkapan</h2>
+    <table id="logTable">
+        <tr><th>Nama</th><th>Total Pasal</th><th>Total Denda</th><th>Total Bulan</th><th>Pasal</th></tr>
+    </table>
+    <form id="formPasal">
+<h2>Pidana Ringan</h2><table><tr><th>Kode</th><th>Deskripsi</th><th>Denda</th><th>Tahanan</th></tr><tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1A">1A</td><td>Tidak membawa KTP / tidak memiliki KTP</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1B">1B</td><td>Melakukan penipuan terhadap warga</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1C">1C</td><td>Melakukan pemalakan terhadap warga</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1D">1D</td><td>Memberikan informasi palsu kepada kepolisian</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="10" value="1E">1E</td><td>Pencemaran nama baik</td><td>$5000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="10" value="1F">1F</td><td>Pencemaran nama baik kepada instansi</td><td>$5000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1G">1G</td><td>Menyalahgunakan panggilan hotline</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1H">1H</td><td>Menghambat penyelidikan</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1i">1i</td><td>Mabuk di tempat umum</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1J">1J</td><td>Perkelahian di tempat umum</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1K">1K</td><td>Mengganggu ketertiban umum / provokasi</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1L">1L</td><td>Tidak melengkapi atribut berkendara</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1M">1M</td><td>Memakai hal yang tidak senonoh di keramaian</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1N">1N</td><td>Menghalangi tugas instansi (pengejaran)</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="1O">1O</td><td>Melakukan aksi demo tanpa izin</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="1P">1P</td><td>Melakukan tindakan anarkis pada saat aksi demo</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1Q">1Q</td><td>Menghalangi tugas instansi (pengejaran)</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="10" value="1R">1R</td><td>Mengkonsumsi narkoba dan narkotika</td><td>$5000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="1S">1S</td><td>Mencuri kendaraan warga</td><td>$5000</td><td>5 bulan</td></tr></table><h2>Pidana Sedang</h2><table><tr><th>Kode</th><th>Deskripsi</th><th>Denda</th><th>Tahanan</th></tr><tr><td><input type="checkbox" class="pasal" data-denda="8000" data-bulan="10" value="2A">2A</td><td>Penganiayaan pemukulan terhadap warga</td><td>$8000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="8000" data-bulan="5" value="2B">2B</td><td>MELAKUKAN PEMBEGALAN TERHADAP WARGA</td><td>$8000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2C">2C</td><td>Upaya penyuapan kepada petugas</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2D">2D</td><td>BERADA DI ZONA MERAH / ILEGAL</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="2E">2E</td><td>MENYALAHGUNAKAN ATRIBUT KEPOLISIAN</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="2F">2F</td><td>MELAKUKAN PEMBURUAN ILEGAL (TIDAK MEMILIKI LISENSI)</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="8000" data-bulan="5" value="2G">2G</td><td>MEMBAWA MINUMAN BERALKOHOL (BEER DAN WHISKEY)</td><td>$8000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2H">2H</td><td>	MEMBAWA NARKOBA DAN NARKOTIKA (MARIJUANA DAN KANABIS)</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2I">2I</td><td>Membawa barang ilegal (kevlar, linggis, kunci letter T)</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2J">2J</td><td>MEMBAWA HEWAN YANG DILINDUNGI (HIU DAN PENYU)</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2K">2K</td><td>KEPEMILIKAN BARANG ILEGAL (URANIUM ACD DAN URANIUM)</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2L">2L</td><td>MEMBAWA UANG MERAH > $0 - $1.000</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="2M">2M</td><td>MEMBAWA UANG MERAH > $1.000 - $50.000</td><td>$12000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="12000" data-bulan="10" value="2N">2N</td><td>Membawa uang merah > $1.000 - $50.000</td><td>$12000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="15000" data-bulan="10" value="2O">2O</td><td>PENCUCIAN UANG MERAH</td><td>$15000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2P">2P</td><td>PENCURIAN KENDARAAN ILEGAL / CAR STEALING</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="12000" data-bulan="10" value="2Q">2Q</td><td>MELAKUKAN PROSES NARKOBA DAN NARKOTIKA</td><td>$12000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="15" value="2R">2R</td><td>MELAKUKAN TINDAKAN KABUR DARI FEDERAL</td><td>$10000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="10" value="2S">2S</td><td>Pengedaran barang ilegal (kevlar, marijuana, uranium)</td><td>$20000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="2T">2T</td><td>SENGAJA ATAU TIDAK SENGAJA BERADA DI TKP PERPERANGAN</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="8000" data-bulan="15" value="2U">2U</td><td>UPAYA MELAWAN / MELARIKAN PETUGAS KEPOLISIAN</td><td>$8000</td><td>15 bulan</td></tr></table><h2>Pidana Berat</h2><table><tr><th>Kode</th><th>Deskripsi</th><th>Denda</th><th>Tahanan</th></tr><tr><td><input type="checkbox" class="pasal" data-denda="15000" data-bulan="20" value="4A">4A</td><td>Pengedaran senjata api ilegal</td><td>$15000</td><td>20 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="4B">4B</td><td>KEPEMILIKAN SENJATA TAJAM DAN TUMPUL</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="5" value="4C">4C</td><td>Kepemilikan senjata api ilegal (laras pendek)</td><td>$20000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="5" value="4D">4D</td><td>KEPEMILIKAN SENJATA API ILEGAL (LARAS MENENGAH)</td><td>$20000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="30000" data-bulan="15" value="4E">4E</td><td>KEPEMILIKAN SENJATA API ILEGAL (LARAS PANJANG)</td><td>$30000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="20" value="4F">4F</td><td>MEMPRODUKSI SENJATA API ILEGAL</td><td>$10000</td><td>20 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="10" value="4G">4G</td><td>TIDAK MEMILIKI LISENSI SENJATA API RESMI KEPOLISIAN</td><td>$5000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="15000" data-bulan="15" value="4H">4H</td><td>Melakukan penyanderaan kepada warga</td><td>$15000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="15" value="4i">4i</td><td>MELAKUKAN PENYANDRAAN KEPADA PETUGAS KEPOLISIAN</td><td>$20000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="15" value="4J">4J</td><td>MELAKUKAN PENYANDRAAN KEPADA ANGGOTA INSTANSI</td><td>$20000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="15" value="4K">4K</td><td>UPAYA PEMBUNUHAN KEPADA WARGA MAUPUN PETUGAS</td><td>$20000</td><td>15 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="4L">4L</td><td>PENDONGAN TERHADAP WARGA</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="4M">4M</td><td>PENDONGAN TERHADAP PETUGAS KEPOLISIAN</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="4N">4N</td><td>MELAKUKAN PENEMBAKAN TERHADAP WARGA</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="10" value="4O">4O</td><td>Melakukan penembakan terhadap petugas kepolisian</td><td>$10000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="15000" data-bulan="10" value="4P">4P</td><td>PERAMPOKAN WARUNG BERSENJATA</td><td>$15000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="5000" data-bulan="5" value="4Q">4Q</td><td>PERPERANGAN ANTAR KELOMPOK</td><td>$5000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="10" value="4R">4R</td><td>MENCOBA MENJADI POLISI GADUNGAN</td><td>$20000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="4S">4S</td><td>UPAYA PENGHILANGAN BARANG BUKTI</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="20000" data-bulan="10" value="4T">4T</td><td>UPAYA PEMBUNUHAN WARGA MAUPUN PETUGAS/INSTANSI</td><td>$20000</td><td>10 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="10000" data-bulan="5" value="4U">4U</td><td>MENCOBA UNTUK MEMBANTU KRIMINALISME</td><td>$10000</td><td>5 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="30000" data-bulan="30" value="4V">4V</td><td>MELAKUKAN PERAMPOKAN BANK BESAR</td><td>$30000</td><td>30 bulan</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="50000" data-bulan="PERISIDANGAN / HUKUMAN MATI" value="4W">4W</td><td>MELAKUKAN TINDAKAN KORUPSI INSTANSI</td><td>$50000</td><td>PERISIDANGAN / HUKUMAN MATI</td></tr>
+<tr><td><input type="checkbox" class="pasal" data-denda="50000" data-bulan="HUKUMAN MATI" value="4X">4X</td><td>Terorisme</td><td>$50000</td><td>HUKUMAN MATI</td></tr></table>
+
+<script>
+    const checkboxes = document.querySelectorAll('.pasal');
+    checkboxes.forEach(cb => cb.addEventListener('change', updateTotals));
+
+    function updateTotals() {
+        let totalPasal = 0, totalDenda = 0, totalBulan = 0;
+        document.querySelectorAll('.pasal:checked').forEach(cb => {
+            totalPasal++;
+            totalDenda += parseInt(cb.dataset.denda);
+            totalBulan += parseInt(cb.dataset.bulan);
+        });
+        document.getElementById('totalPasal').textContent = totalPasal;
+        document.getElementById('totalDenda').textContent = totalDenda;
+        document.getElementById('totalBulan').textContent = totalBulan;
+    }
+
+    function resetForm() {
+        document.getElementById('formPasal').reset();
+        updateTotals();
+    }
+
+    function logPenangkapan() {
+        const nama = document.getElementById('tersangka').value;
+        const totalPasal = document.getElementById('totalPasal').textContent;
+        const totalDenda = document.getElementById('totalDenda').textContent;
+        const totalBulan = document.getElementById('totalBulan').textContent;
+        let pasalList = [];
+        document.querySelectorAll('.pasal:checked').forEach(cb => pasalList.push(cb.value));
+        const row = `<tr><td>${nama}</td><td>${totalPasal}</td><td>$${totalDenda}</td><td>${totalBulan} bulan</td><td>${pasalList.join(', ')}</td></tr>`;
+        document.getElementById('logTable').innerHTML += row;
+    }
+</script>
+
+</body>
+</html>
